@@ -4,10 +4,10 @@ using UnityStandardAssets.CrossPlatformInput;
 
 namespace UnityStandardAssets._2D
 {
-    [RequireComponent(typeof (PlatformerCharacter2D))]
-    public class Platformer2DUserControl : MonoBehaviour
+	[RequireComponent(typeof (LunaCharacterController))]
+	public class LunaUserControl : MonoBehaviour
     {
-        private PlatformerCharacter2D m_Character;
+		private LunaCharacterController m_Character;
         public bool m_Jump;
 		public float h;
 
@@ -16,7 +16,7 @@ namespace UnityStandardAssets._2D
 
         private void Awake()
         {
-            m_Character = GetComponent<PlatformerCharacter2D>();
+			m_Character = GetComponent<LunaCharacterController>();
         }
 
 
