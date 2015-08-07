@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class PlayerScript : MonoBehaviour {
+
+	public GameObject Player;
 
 	public float MaxHealth = 200;
 	public float CurHealth = 200; //CurHealth = current health
@@ -20,13 +22,13 @@ public class Player : MonoBehaviour {
 	//End
 
 	//Releation to player Experience
-	public float MaxExp = 200;
-	public float CurExp = 0;
-	public float NextLevelExpIncrease = 1.1f; //Changes the value of the exp increase each turn
-	public float NextLevelHealthIncrease = 1.1f; //changes the value of the health increase each turn
-	public float ExperienceMod = 1.1f; //If you obtain an powerup which temp increases your expeience gains
-	public float ExperienceModTalent = 1.1f; //Small number ADDED to experience gains each time you obtain exp (+ 5exp forever)
-	public int PlayerLevel = 1; //Set level cap at 100
+	//public float MaxExp = 200;
+	//public float CurExp = 0;
+	//public float NextLevelExpIncrease = 1.1f; //Changes the value of the exp increase each turn
+	//public float NextLevelHealthIncrease = 1.1f; //changes the value of the health increase each turn
+	//public float ExperienceMod = 1.1f; //If you obtain an powerup which temp increases your expeience gains
+	//public float ExperienceModTalent = 1.1f; //Small number ADDED to experience gains each time you obtain exp (+ 5exp forever)
+	//public int PlayerLevel = 1; //Set level cap at 100
 	//End
 
 	//GUI
@@ -80,8 +82,10 @@ public class Player : MonoBehaviour {
 	//End
 
 
+
 	void Awake () {
 	
+		Player = GameObject.FindGameObjectWithTag ("Player");
 		Spawn = GameObject.FindGameObjectWithTag ("Spawn");
 
 		//Load ();
@@ -91,42 +95,42 @@ public class Player : MonoBehaviour {
 	{
 		if (!Death) {  //If NOT death
 			//CharacterStats
-			GUI.Box (new Rect (20, 5, 200, 25), "", BlackBar);  //BlackBar bar hehind the text
-			GUI.Box (new Rect (20, 5, 100, 25), PlayerName, CharName); //
-			GUI.Box (new Rect (120, 5, 80, 25), "Player Level: " + PlayerLevel, CharName);
+			//GUI.Box (new Rect (20, 5, 200, 25), "", BlackBar);  //BlackBar bar hehind the text
+			//GUI.Box (new Rect (20, 5, 100, 25), PlayerName, CharName); //
+			//GUI.Box (new Rect (120, 5, 80, 25), "Player Level: " + PlayerLevel, CharName);
 
 			//HealthBar
-			GUI.Box (new Rect (20, 35, 200, 25), "", BlackBar);  //BlackBar bar hehind the text
-			GUI.Box (new Rect (20, 35, CurHealth, 25), "", HealthBar);
-			GUI.Box (new Rect (20, 35, 200, 25), "Health: " + CurHealth + "/" + MaxHealth, TextField);
+			//GUI.Box (new Rect (20, 35, 200, 25), "", BlackBar);  //BlackBar bar hehind the text
+			//GUI.Box (new Rect (20, 35, CurHealth, 25), "", HealthBar);
+			//GUI.Box (new Rect (20, 35, 200, 25), "Health: " + CurHealth + "/" + MaxHealth, TextField);
 
 			//Experience bar
-			GUI.Box (new Rect (20, 65, 200, 25), "", BlackBar);  //BlackBar bar hehind the text
-			GUI.Box (new Rect (20, 65, CurExp, 25), "", ExperienceBar);
-			GUI.Box (new Rect (20, 65, 200, 25), "XP: " + CurExp + "/" + MaxExp, TextField);
+			//GUI.Box (new Rect (20, 65, 200, 25), "", BlackBar);  //BlackBar bar hehind the text
+			//GUI.Box (new Rect (20, 65, CurExp, 25), "", ExperienceBar);
+			//GUI.Box (new Rect (20, 65, 200, 25), "XP: " + CurExp + "/" + MaxExp, TextField);
 		
 			//Player  Currency
-			GUI.Box (new Rect (20, 95, 200, 25), "", BlackBar);
-			GUI.Box (new Rect (20, 95, 200, 25), "Gems: " + Coins +"/35", TextField);
+			//GUI.Box (new Rect (20, 95, 200, 25), "", BlackBar);
+			//GUI.Box (new Rect (20, 95, 200, 25), "Gems: " + Coins +"/35", TextField);
 
 			//Player Lives
-			GUI.Box (new Rect (20, 125, 200, 25), "", BlackBar);
-			GUI.Box (new Rect (20, 125, 200, 25), "Lives: " + PlayerLives, TextField);
+			//GUI.Box (new Rect (20, 125, 200, 25), "", BlackBar);
+			//GUI.Box (new Rect (20, 125, 200, 25), "Lives: " + PlayerLives, TextField);
 
 
 		}
 
-		if (Death) {
-			GUI.Box (new Rect(0,0,Screen.width,Screen.height),"Game Over \n \n \n Respawing in... " + Despawn + " seconds");
-		}
+		//if (Death) {
+			//GUI.Box (new Rect(0,0,Screen.width,Screen.height),"Game Over \n \n \n Respawing in... " + Despawn + " seconds");
+		//}
 
 	}
 
 	// Update is called once per frame
 	void Update () {
 	
-		MaxHealth = 200 + (PlayerLevel-1) * HealthModMofifier * HealthModTalent *NextLevelHealthIncrease;
-		MaxExp = 200 + (PlayerLevel - 1) * ExperienceMod * ExperienceModTalent * NextLevelExpIncrease;
+		MaxHealth = 200; //+ (PlayerLevel-1) * HealthModMofifier * HealthModTalent *NextLevelHealthIncrease;
+		//MaxExp = 200 + (PlayerLevel - 1) * ExperienceMod * ExperienceModTalent * NextLevelExpIncrease;
 
 		if (CurHealth >= MaxHealth) {
 			CurHealth = MaxHealth;
@@ -137,19 +141,19 @@ public class Player : MonoBehaviour {
 			DeathIdentifier();
 		}
 		
-		if (CurExp >= MaxExp) {
-			LevelUp ();
-			CurExp = 0;
-		}
+		//if (CurExp >= MaxExp) {
+			//LevelUp ();
+			//CurExp = 0;
+		//}
 		
-		if (CurExp <= 0) {
-			CurExp = 0;
-		}
+		//if (CurExp <= 0) {
+			//CurExp = 0;
+		//}
 
-		if (PlayerLevel >= 100) {
-			PlayerLevel = 100;
-			CurExp = 0;
-		}
+		//if (PlayerLevel >= 100) {
+			//PlayerLevel = 100;
+			//CurExp = 0;
+		//}
 
 		if (Despawncountdown <= 1  && Death) 
 		{
@@ -179,32 +183,36 @@ public class Player : MonoBehaviour {
 
 	public void DeathIdentifier(){
 
-		if (PlayerLives >= 0) {
-			PlayerLives -= 1;
-			Debug.Log ("Life lost");
+		//if (PlayerLives >= 0) {
+			//PlayerLives -= 1;
+			//Debug.Log ("Life lost");
 
 			transform.position = Spawn.transform.position;
+
+		AbilityBar pstats = Player.GetComponent<AbilityBar> ();
+		pstats.EmptyAbilityBar ();
+
 			CurHealth=MaxHealth;
-		}
+		//}
 
-		if (PlayerLives <0)		{
-			DeathSequence();
-		}
-
-
+		//if (PlayerLives <0)		{
+			//DeathSequence();
+		//}
 
 
 
-	}
 
-	void LevelUp()
-	{
-
-		PlayerLevel += 1;
-		CurExp = 0;
-		CurHealth = MaxHealth;
 
 	}
+
+	//void LevelUp()
+	//{
+
+		//PlayerLevel += 1;
+		//CurExp = 0;
+		//CurHealth = MaxHealth;
+
+	//}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
@@ -217,13 +225,13 @@ public class Player : MonoBehaviour {
 
 	}
 
-	void DeathSequence(){
+	//void DeathSequence(){
 
-		Death = true; //Save Coins etc
+		//Death = true; //Save Coins etc
 		//Save ();
-		Debug.Log ("Game Over");
+		//Debug.Log ("Game Over");
 
-	}
+	//}
 
 	void LootManagement()
 	{
@@ -235,8 +243,8 @@ public class Player : MonoBehaviour {
 	void Save()
 	{
 		PlayerPrefs.SetInt ("PlayerCurrency", Coins);
-		PlayerPrefs.SetFloat ("PlayerExperience", CurExp);
-		PlayerPrefs.SetInt ("PlayerLevel",PlayerLevel );
+		//PlayerPrefs.SetFloat ("PlayerExperience", CurExp);
+		//PlayerPrefs.SetInt ("PlayerLevel",PlayerLevel );
 		Debug.Log ("Saved coins" + PlayerPrefs.GetInt ("PlayerCurrency") + " Current Exp: " + PlayerPrefs.GetFloat("PlayerExperience") + "Player Level: " + PlayerPrefs.GetInt("PlayerLevel"));
 	}
 
@@ -247,8 +255,8 @@ public class Player : MonoBehaviour {
 		//PlayerName = PlayerPrefs.GetString ("CharName"); //To be set int menu
 		Coins=PlayerPrefs.GetInt("PlayerCurrency");
 		//Important to set level before EXP incase of level up
-		PlayerLevel = PlayerPrefs.GetInt("PlayerLevel");
-		CurExp = PlayerPrefs.GetInt("PlayerExperience");
+		//PlayerLevel = PlayerPrefs.GetInt("PlayerLevel");
+		//CurExp = PlayerPrefs.GetInt("PlayerExperience");
 //		ExperienceMod = PlayerPrefs.GetFloat ("ExperienceMod");
 //		ExperienceModTalent = PlayerPrefs.GetFloat ("ExperienceModTalent");
 //		HealthModMofifier=PlayerPrefs.GetFloat ("HealthModMofifier");

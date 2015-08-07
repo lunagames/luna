@@ -17,7 +17,7 @@ namespace UnityStandardAssets._2D
         private void OnTriggerEnter2D(Collider2D other)
         {
 			if (other.tag == "Player" && eventhappned == false) {
-				Player pstats = Player.GetComponent<Player> ();
+				PlayerScript pstats = Player.GetComponent<PlayerScript> ();
 				pstats.DeathIdentifier ();
 				Debug.Log ("Player Death - Collision Detected");
 				eventhappned = true;
