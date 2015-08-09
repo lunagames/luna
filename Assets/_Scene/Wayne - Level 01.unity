@@ -4612,8 +4612,10 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
+  AbilityEnabled: 0
+  AbilityDraining: 0
   MaxAbilityCharge: 200
-  CurrentAbilityChange: 0
+  CurrentAbilityCharge: 0
 --- !u!1 &1558198836
 GameObject:
   m_ObjectHideFlags: 0

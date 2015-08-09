@@ -7,8 +7,29 @@ public class AbilityBar : MonoBehaviour {
 	public GUIStyle ExperienceBar;
 	public GUIStyle TextField;
 
+	public bool AbilityEnabled=false;
+	public bool AbilityDraining=false;
 	public float MaxAbilityCharge = 200;
-	public float CurrentAbilityChange = 0;
+	public float CurrentAbilityCharge = 0;
+
+	void Update(){
+
+		if (CurrentAbilityCharge <= 0) {
+			AbilityEnabled = false;
+			CurrentAbilityCharge=0;
+		}
+
+		if (AbilityDraining==true){
+			//Debug.Log("AbilityEnabled");
+			CurrentAbilityCharge-=Time.deltaTime*8;
+		}
+		
+			
+
+
+
+
+	}
 
 	void OnGUI()
 	{
@@ -16,8 +37,8 @@ public class AbilityBar : MonoBehaviour {
 			
 			
 		//Experience bar
-		GUI.Box (new Rect (20, 5, 200, 25), "", BlackBar);  //BlackBar bar hehind the text
-		GUI.Box (new Rect (20, 5, CurrentAbilityChange, 25), "", ExperienceBar);
+		GUI.Box (new Rect (10, 10, 200, 10), "", BlackBar);  //BlackBar bar hehind the text
+		GUI.Box (new Rect (10, 10, CurrentAbilityCharge, 10), "", ExperienceBar);
 		//GUI.Box (new Rect (20, 5, 200, 25), "XP: " + CurrentAbilityChange + "/" + MaxAbilityCharge, TextField);
 			
 			
@@ -27,12 +48,25 @@ public class AbilityBar : MonoBehaviour {
 
 	public void FillAbilityBar()
 	{
-		CurrentAbilityChange = MaxAbilityCharge;
+		//Debug.Log("Ability Bar Fill");
+		CurrentAbilityCharge = MaxAbilityCharge;
+		AbilityEnabled = true;
+		AbilityDraining = false;
 	}
+
+	public void AbilityBarDrainStart()
+	{
+		//Debug.Log("Ability Bar Fill");
+		AbilityDraining = true;
+	}
+
+
 
 	public void EmptyAbilityBar()
 	{
-		CurrentAbilityChange = 0;
+		CurrentAbilityCharge = 0;
+		AbilityEnabled = false;
+		AbilityDraining = false;
 	}
 
 	}

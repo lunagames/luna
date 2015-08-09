@@ -29,7 +29,8 @@ public class AbilityChargePoint : MonoBehaviour {
 	{
 		if (other.tag == "Player") {
 			
-
+			AbilityBar pstats = Player.GetComponent<AbilityBar> ();
+			pstats.AbilityBarDrainStart ();
 			
 		}
 	}
