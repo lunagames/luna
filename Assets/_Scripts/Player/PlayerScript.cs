@@ -70,7 +70,6 @@ public class PlayerScript : MonoBehaviour {
 	//End
 
 	//Powerps
-	public GameObject Fireball;
 	public GameObject Iceball;
 	public ParticleEmitter InvincibleCloak;
 	//End
