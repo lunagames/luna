@@ -29,7 +29,7 @@ public class Abilities : MonoBehaviour {
 				}
 			}
 		}
-		if(Input.GetKeyUp(KeyCode.F)||activePower == null||!powerActivated){
+		if(Input.GetKeyUp(KeyCode.F)||activePower == null||!powerActivated||abilityBar.CurrentAbilityCharge<=0){
 			if(powerActivated){
 				Time.timeScale = 1;
 				abilityBar.abilityCost = 0;
