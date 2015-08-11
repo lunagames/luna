@@ -37,6 +37,7 @@ public class PlayerScript : MonoBehaviour {
 	public GUIStyle TextField;
 	public GUIStyle CharName;
 	public GUIStyle ExperienceBar;
+	AbilityBar pstats;
 	//End
 
 
@@ -78,16 +79,17 @@ public class PlayerScript : MonoBehaviour {
 
 	//Spawns
 	public GameObject Spawn;
-
+	public GameObject fireballSpawn;
 	//End
 
 
 
 	void Awake () {
-	
+
 		Player = GameObject.FindGameObjectWithTag ("Player");
 		Spawn = GameObject.FindGameObjectWithTag ("Spawn");
-
+		pstats = Player.GetComponent<AbilityBar> ();
+		fireballSpawn = GameObject.FindGameObjectWithTag("FireballSpawn");
 		//Load ();
 	}
 
@@ -131,6 +133,9 @@ public class PlayerScript : MonoBehaviour {
 	
 		MaxHealth = 200; //+ (PlayerLevel-1) * HealthModMofifier * HealthModTalent *NextLevelHealthIncrease;
 		//MaxExp = 200 + (PlayerLevel - 1) * ExperienceMod * ExperienceModTalent * NextLevelExpIncrease;
+
+		//if ability is available, player is alive, and fire button is pressed, fire
+
 
 		if (CurHealth >= MaxHealth) {
 			CurHealth = MaxHealth;
@@ -181,15 +186,27 @@ public class PlayerScript : MonoBehaviour {
 
 	}
 
+	void FixedUpdate()
+	{
+		//if Fireball object exists, fireball ability is enabled, player is not dead, and S key is pushed, Shoot a fireball
+		if (Fireball && pstats.AbilityEnabled && CurHealth > 0)
+		{
+			if (Input.GetKeyDown(KeyCode.S))
+			{
+				ShootFireball();
+			}
+		}
+	}
+
 	public void DeathIdentifier(){
 
 		//if (PlayerLives >= 0) {
 			//PlayerLives -= 1;
 			//Debug.Log ("Life lost");
 
-			transform.position = Spawn.transform.position;
+		transform.position = Spawn.transform.position;
 
-		AbilityBar pstats = Player.GetComponent<AbilityBar> ();
+
 		pstats.EmptyAbilityBar ();
 
 			CurHealth=MaxHealth;
@@ -199,10 +216,14 @@ public class PlayerScript : MonoBehaviour {
 			//DeathSequence();
 		//}
 
+	}
 
+	void ShootFireball()
+	{
+		Instantiate(Fireball, fireballSpawn.transform.position,Quaternion.identity);
 
-
-
+		//decrement the ability bar by 10%
+		pstats.CurrentAbilityCharge -= pstats.MaxAbilityCharge * 0.10f;
 	}
 
 	//void LevelUp()

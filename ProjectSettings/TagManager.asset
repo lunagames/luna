@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - CoinCollectNoise
   - Neutralized
+  - FireballSpawn
   layers:
   - Default
   - TransparentFX
