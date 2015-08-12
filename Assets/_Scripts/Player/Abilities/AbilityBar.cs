@@ -56,7 +56,7 @@ public class AbilityBar : MonoBehaviour {
 	{
 		//Debug.Log("Ability Bar Fill");
 		CurrentAbilityCharge = MaxAbilityCharge;
-		AbilityEnabled = false;
+		AbilityEnabled = true;
 		AbilityDraining = false;
 	}
 	

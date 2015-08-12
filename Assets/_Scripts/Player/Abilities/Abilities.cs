@@ -1,17 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets._2D;
 
 public class Abilities : MonoBehaviour {
 	public GameObject player;
+	public GameObject fireball;
 	public float timeSlowSpeed = 0.5f;
 	public AbilityBar abilityBar;
 	public string activePower;
 	public float T_abilityCost = 10;
 	
 	private bool powerActivated = false;
+	//Fireball 
+	private LunaCharacterController lunaCharacterController;
+	private PlayerScript playerScript;
+	private GameObject fireballSpawn;
+
 	void Awake(){
 		player = this.gameObject;
-		abilityBar = FindObjectOfType<AbilityBar>();
+		abilityBar = GetComponent<AbilityBar>();
+		playerScript = GetComponent<PlayerScript>();
+		fireballSpawn = GameObject.Find("FireballSpawn");
+
 	}
 	// Use this for initialization
 	void Start () {
@@ -36,5 +46,23 @@ public class Abilities : MonoBehaviour {
 				powerActivated = false;
 			}
 		}
+
+		//Fireball shooting
+		if(fireball && abilityBar.AbilityEnabled && playerScript.CurHealth > 0)
+		{
+			if(Input.GetKeyDown(KeyCode.S))
+			{
+				ShootFireball();
+			}
+		}
+	}
+
+	void ShootFireball()
+	{
+		Debug.Log ("Fireball Shot!");
+		Instantiate (fireball,fireballSpawn.transform.position,Quaternion.identity);
+		//decrement the abilitybar by 10% per shot
+		abilityBar.CurrentAbilityCharge -= abilityBar.MaxAbilityCharge * 0.10f;
+		
 	}
 }
