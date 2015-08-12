@@ -5,18 +5,22 @@ using UnityStandardAssets._2D;
 public class Abilities : MonoBehaviour {
 	public GameObject player;
 	public GameObject fireball;
+	public GameObject pushForce;
 	public float timeSlowSpeed = 0.5f;
 	public AbilityBar abilityBar;
 	public string activePower;
 	public float T_abilityCost = 10;
 	
 	private bool powerActivated = false;
+	private bool waveSpawned = false;
 	//Fireball 
 	private LunaCharacterController lunaCharacterController;
 	private PlayerScript playerScript;
 	private GameObject fireballSpawn;
+	private GameObject forceWave;
 
 	void Awake(){
+		lunaCharacterController = FindObjectOfType<LunaCharacterController>();
 		player = this.gameObject;
 		abilityBar = GetComponent<AbilityBar>();
 		playerScript = GetComponent<PlayerScript>();
@@ -38,6 +42,7 @@ public class Abilities : MonoBehaviour {
 					powerActivated = true;
 				}
 			}
+
 		}
 		if(Input.GetKeyUp(KeyCode.F)||activePower == null||!powerActivated||abilityBar.CurrentAbilityCharge<=0){
 			if(powerActivated){
@@ -46,7 +51,13 @@ public class Abilities : MonoBehaviour {
 				powerActivated = false;
 			}
 		}
-
+		if(Input.GetKeyDown(KeyCode.F)){
+			if(activePower == "ForcePush"&&abilityBar.CurrentAbilityCharge>=abilityBar.MaxAbilityCharge/10){
+				forceWave = Instantiate(pushForce,transform.position,Quaternion.identity) as GameObject;
+				forceWave.GetComponent<PushWaveController>().facingRight = lunaCharacterController.m_FacingRight;
+				abilityBar.CurrentAbilityCharge -= abilityBar.MaxAbilityCharge * 0.10f;
+			}
+		}
 		//Fireball shooting
 		if(fireball && abilityBar.AbilityEnabled && playerScript.CurHealth > 0)
 		{
