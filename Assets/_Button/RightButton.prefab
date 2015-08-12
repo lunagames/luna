@@ -38,10 +38,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
-    m_HighlightedColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
+    m_NormalColor: {r: .737254918, g: .737254918, b: .737254918, a: .0588235296}
+    m_HighlightedColor: {r: .737254918, g: .737254918, b: .737254918, a: .0588235296}
+    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: .0588235296}
+    m_DisabledColor: {r: .737254918, g: .737254918, b: .737254918, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delegates:
-  - eventID: 2
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -84,13 +84,13 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
               Culture=neutral, PublicKeyToken=null
             m_IntArgument: 0
-            m_FloatArgument: 1
+            m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 3
+  - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -149,8 +149,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 314.5, y: 115}
-  m_SizeDelta: {x: 754, y: 389}
+  m_AnchoredPosition: {x: 315.5, y: 115}
+  m_SizeDelta: {x: 756, y: 389}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
 Prefab:

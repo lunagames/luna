@@ -443,7 +443,6 @@ Transform:
   m_RootOrder: 0
 --- !u!50 &5030648
 Rigidbody2D:
-  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -452,11 +451,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 3
+  m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!58 &5879882
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -1664,8 +1663,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+<<<<<<< HEAD
   fireball: {fileID: 185732, guid: 3c3e722068adafc43a739e64f4935768, type: 2}
   pushForce: {fileID: 156000, guid: 8fc4ec249d8d4ab4ea4fda912ad0ea32, type: 2}
+=======
+  fireball: {fileID: 0}
+>>>>>>> origin/master
   timeSlowSpeed: .300000012
   abilityBar: {fileID: 0}
   activePower: 
