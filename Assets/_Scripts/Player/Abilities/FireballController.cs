@@ -11,6 +11,7 @@ public class FireballController : MonoBehaviour {
 	private float rScale;
 	private float adjustedTime;
 
+	public float damage;
 	public float speed;
 	
 	// Use this for initialization
@@ -51,9 +52,10 @@ public class FireballController : MonoBehaviour {
 	{
 		if(col.gameObject.tag == "Destructable" || col.gameObject.tag == "Enemy")
 		{
-			GameObject.Destroy(col.gameObject);
+			col.gameObject.GetComponent<EnemyDestructableHealth>().health -= damage;
+			//GameObject.Destroy(col.gameObject);
 		}
-		GameObject.Destroy(gameObject);
+		Object.Destroy(gameObject);
 	}
 	
 }

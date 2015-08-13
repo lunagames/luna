@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83cdbbfd70e62724f89c0a6e764a36ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
   speed: 500
 --- !u!198 &19817004
 ParticleSystem:
@@ -2289,6 +2290,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: CollisionModule.enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
