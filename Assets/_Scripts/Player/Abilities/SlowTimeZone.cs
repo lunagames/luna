@@ -24,9 +24,13 @@ public class SlowTimeZone : MonoBehaviour {
 	}
 	void OnTriggerExit2D(Collider2D col){
 		if(playerEntered){
-			col.gameObject.GetComponent<Abilities>().activePower = null;
-			abilityBar.currentAbility = abilityBar.NoAbility;
-			Debug.Log ("Time Power Lost");
+			if(col.gameObject.tag == "Player")
+			{
+				col.gameObject.GetComponent<Abilities>().activePower = null;
+				abilityBar.currentAbility = abilityBar.NoAbility;
+				Debug.Log ("Time Power Lost");
+			}
+
 		}
 	}
 }
