@@ -68,7 +68,7 @@ public class Abilities : MonoBehaviour {
 		}
 	}
 
-	public void ShootFireball()
+	void ShootFireball()
 	{
 		Debug.Log ("Fireball Shot!");
 		Instantiate (fireball,fireballSpawn.transform.position,Quaternion.identity);
