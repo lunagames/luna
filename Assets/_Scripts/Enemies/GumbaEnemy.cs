@@ -6,8 +6,6 @@ public class GumbaEnemy : MonoBehaviour {
 	public float velocity = 1f;
 	private Rigidbody2D m_Rigidbody2D;
 
-	public float health = 20;
-
 	public Transform sightStart;
 	public Transform sightEnd;
 
@@ -38,11 +36,6 @@ public class GumbaEnemy : MonoBehaviour {
 			transform.localScale=new Vector2 (transform.localScale.x * -1, transform.localScale.y);
 			velocity*=-1;
 
-		}
-
-		if (health <= 0)
-		{
-			EnemyDies();
 		}
 
 	}
