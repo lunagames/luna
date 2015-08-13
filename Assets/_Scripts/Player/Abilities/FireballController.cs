@@ -55,7 +55,7 @@ public class FireballController : MonoBehaviour {
 			col.gameObject.GetComponent<EnemyDestructableHealth>().health -= damage;
 			//GameObject.Destroy(col.gameObject);
 		}
-		Object.Destroy(gameObject);
+		GameObject.Destroy(gameObject);
 	}
 	
 }

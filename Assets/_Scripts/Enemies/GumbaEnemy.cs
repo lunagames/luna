@@ -38,6 +38,7 @@ public class GumbaEnemy : MonoBehaviour {
 
 		}
 
+		//if health is depleted, die
 		if(GetComponent<EnemyDestructableHealth>().health <= 0)
 		{
 			EnemyDies();
