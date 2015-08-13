@@ -46,5 +46,14 @@ public class FireballController : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	void OnCollisionEnter2D(Collision2D col)
+	{
+		if(col.gameObject.tag == "Destructable" || col.gameObject.tag == "Enemy")
+		{
+			GameObject.Destroy(col.gameObject);
+		}
+		GameObject.Destroy(gameObject);
+	}
 	
 }

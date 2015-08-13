@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - CoinCollectNoise
   - Neutralized
+  - Destructable
   layers:
   - Default
   - TransparentFX

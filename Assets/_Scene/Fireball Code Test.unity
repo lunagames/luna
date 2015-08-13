@@ -531,7 +531,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 479506, guid: a35f20a788353e44db487ef5c3c49c2d, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 170188, guid: a35f20a788353e44db487ef5c3c49c2d, type: 2}
       propertyPath: m_Name
@@ -639,7 +639,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 404870, guid: 67c59b1c266bda74ebf1904af09b71d6, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67c59b1c266bda74ebf1904af09b71d6, type: 2}
@@ -2432,7 +2432,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 426660, guid: 8f441980973055943abd1cd0a2828289, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6133120, guid: 8f441980973055943abd1cd0a2828289, type: 2}
       propertyPath: m_Offset.x
@@ -3064,7 +3064,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 467824, guid: 3d0e9bd9047f22048b8173966756ae1e, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 467760, guid: 3d0e9bd9047f22048b8173966756ae1e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5566,7 +5566,7 @@ GameObject:
   - 50: {fileID: 2131105992}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
