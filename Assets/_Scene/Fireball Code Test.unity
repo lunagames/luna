@@ -3027,6 +3027,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65f96f1ddce8ad7498e91e380815d80f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1176215960 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 167876, guid: 3d0e9bd9047f22048b8173966756ae1e, type: 2}
+  m_PrefabInternal: {fileID: 1214258693}
+--- !u!114 &1176215968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1176215960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b991800fadbf9849b6cbd5b8eb0aa98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
 --- !u!1001 &1214258693
 Prefab:
   m_ObjectHideFlags: 0
@@ -5564,6 +5580,8 @@ GameObject:
   - 23: {fileID: 2131105993}
   - 61: {fileID: 2131105994}
   - 50: {fileID: 2131105992}
+  - 114: {fileID: 2131105997}
+  - 114: {fileID: 2131105998}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Destructable
@@ -5643,6 +5661,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 19
+--- !u!114 &2131105997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2131105991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b991800fadbf9849b6cbd5b8eb0aa98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 30
+--- !u!114 &2131105998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2131105991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8b579b6d6f7f94ba91e44aef11a5a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2139989610 stripped
 Transform:
   m_PrefabParentObject: {fileID: 446744, guid: fd3214d20b2871d4c83e418722b5ebb6, type: 2}
