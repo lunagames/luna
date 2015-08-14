@@ -5638,8 +5638,8 @@ GameObject:
   - 23: {fileID: 2131105993}
   - 61: {fileID: 2131105994}
   - 50: {fileID: 2131105992}
-  - 114: {fileID: 2131105997}
   - 114: {fileID: 2131105998}
+  - 114: {fileID: 2131105997}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Destructable

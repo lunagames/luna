@@ -39,10 +39,14 @@ public class GumbaEnemy : MonoBehaviour {
 		}
 
 		//if health is depleted, die
-		if(GetComponent<EnemyDestructableHealth>().health <= 0)
+		if(GetComponent<EnemyDestructableHealth>() != null)
 		{
-			EnemyDies();
+			if(GetComponent<EnemyDestructableHealth>().health <= 0)
+			{
+				EnemyDies();
+			}
 		}
+
 	}
 
 	void OnDrawGizmos()
