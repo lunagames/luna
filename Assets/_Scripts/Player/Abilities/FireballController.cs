@@ -13,7 +13,7 @@ public class FireballController : MonoBehaviour {
 
 	public float damage;
 	public float speed;
-	
+	public GameObject fireballExplosion;
 	// Use this for initialization
 	void Start () {
 		if(Time.timeScale == 1){
@@ -61,6 +61,9 @@ public class FireballController : MonoBehaviour {
 		}
 		if(col.gameObject != GameObject.FindGameObjectWithTag("Player"))
 		{
+			//create a fireball explosion and destroy the fireball on impact 
+			GameObject explosion = Instantiate(fireballExplosion,transform.position,Quaternion.identity) as GameObject;
+			GameObject.Destroy(explosion,2.5f);
 			GameObject.Destroy(gameObject);
 		}
 
