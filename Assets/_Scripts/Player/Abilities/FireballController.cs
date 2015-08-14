@@ -59,7 +59,11 @@ public class FireballController : MonoBehaviour {
 
 			//GameObject.Destroy(col.gameObject);
 		}
-		GameObject.Destroy(gameObject);
+		if(col.gameObject != GameObject.FindGameObjectWithTag("Player"))
+		{
+			GameObject.Destroy(gameObject);
+		}
+
 	}
 
 }

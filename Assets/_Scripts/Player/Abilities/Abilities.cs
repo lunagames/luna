@@ -58,6 +58,11 @@ public class Abilities : MonoBehaviour {
 				abilityBar.CurrentAbilityCharge -= abilityBar.MaxAbilityCharge * 0.10f;
 			}
 		}
+
+	}
+
+	void FixedUpdate()
+	{
 		//Fireball shooting
 		if(fireball && abilityBar.AbilityEnabled && playerScript.CurHealth > 0)
 		{
