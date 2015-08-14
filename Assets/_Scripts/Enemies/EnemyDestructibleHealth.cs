@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyDestructableHealth : MonoBehaviour {
+public class EnemyDestructibleHealth : MonoBehaviour {
 
 	public float health;
 

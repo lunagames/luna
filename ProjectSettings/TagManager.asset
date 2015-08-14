@@ -10,7 +10,7 @@ TagManager:
   - Enemy
   - CoinCollectNoise
   - Neutralized
-  - Destructable
+  - Destructible
   - Fireball
   layers:
   - Default

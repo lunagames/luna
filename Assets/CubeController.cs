@@ -11,9 +11,9 @@ public class CubeController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(GetComponent<EnemyDestructableHealth>() != null)
+		if(GetComponent<EnemyDestructibleHealth>() != null)
 		{
-			if(GetComponent<EnemyDestructableHealth>().health <= 0)
+			if(GetComponent<EnemyDestructibleHealth>().health <= 0)
 			{
 				Destroy(gameObject);
 			}

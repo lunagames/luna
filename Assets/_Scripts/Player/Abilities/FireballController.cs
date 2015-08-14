@@ -52,9 +52,9 @@ public class FireballController : MonoBehaviour {
 	{
 		if(col.gameObject.tag == "Destructable" || col.gameObject.tag == "Enemy")
 		{
-			if(col.gameObject.GetComponent<EnemyDestructableHealth>() != null)
+			if(col.gameObject.GetComponent<EnemyDestructibleHealth>() != null)
 			{
-				col.gameObject.GetComponent<EnemyDestructableHealth>().health -= damage;
+				col.gameObject.GetComponent<EnemyDestructibleHealth>().health -= damage;
 			}
 
 			//GameObject.Destroy(col.gameObject);
