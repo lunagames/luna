@@ -57,5 +57,5 @@ public class FireballController : MonoBehaviour {
 		}
 		GameObject.Destroy(gameObject);
 	}
-	
+
 }

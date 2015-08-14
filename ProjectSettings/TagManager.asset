@@ -11,6 +11,7 @@ TagManager:
   - CoinCollectNoise
   - Neutralized
   - Destructable
+  - Fireball
   layers:
   - Default
   - TransparentFX
