@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 446882}
   - 198: {fileID: 19850664}
   - 199: {fileID: 19983794}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ GameObject:
   - 114: {fileID: 11480864}
   - 50: {fileID: 5024382}
   - 58: {fileID: 5812326}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Fireball
   m_TagString: Fireball
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!58 &5812326
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   speed: 500
+  fireballExplosion: {fileID: 151796, guid: 683ebd90232ca9648aa36e10e200881c, type: 2}
 --- !u!198 &19817004
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -2298,6 +2299,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Fireball
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fireballExplosion
+      value: 
+      objectReference: {fileID: 151796, guid: 683ebd90232ca9648aa36e10e200881c, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
