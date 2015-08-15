@@ -59,7 +59,7 @@ public class FireballController : MonoBehaviour {
 
 			//GameObject.Destroy(col.gameObject);
 		}
-		if(col.gameObject != GameObject.FindGameObjectWithTag("Player"))
+		if(col.gameObject != GameObject.FindGameObjectWithTag("Player") || col.gameObject.tag != "Fireball")
 		{
 			//create a fireball explosion and destroy the fireball on impact 
 			GameObject explosion = Instantiate(fireballExplosion,transform.position,Quaternion.identity) as GameObject;
