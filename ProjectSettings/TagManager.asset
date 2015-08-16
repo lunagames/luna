@@ -12,6 +12,7 @@ TagManager:
   - Neutralized
   - Destructible
   - Fireball
+  - Destructable
   layers:
   - Default
   - TransparentFX
@@ -26,8 +27,8 @@ TagManager:
   - Obsticle
   - Ground
   - Player
+  - Player Projectiles
   - NPC
-  - 
   - 
   - 
   - 

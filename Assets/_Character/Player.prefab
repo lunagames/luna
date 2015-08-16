@@ -400,7 +400,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .366666675, y: -.0873333663, z: .163000003}
+  m_LocalPosition: {x: .366666675, y: -.0873333663, z: -.075000003}
   m_LocalScale: {x: .666666687, y: .666666687, z: 1}
   m_Children: []
   m_Father: {fileID: 420786}
@@ -443,6 +443,7 @@ Transform:
   m_RootOrder: 0
 --- !u!50 &5030648
 Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -451,11 +452,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 3
-  m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!58 &5879882
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -1668,7 +1669,7 @@ MonoBehaviour:
   pushForce: {fileID: 156000, guid: 8fc4ec249d8d4ab4ea4fda912ad0ea32, type: 2}
   timeSlowSpeed: .300000012
   abilityBar: {fileID: 0}
-  activePower: 
+  activePower: ForcePush
   T_abilityCost: 1
 --- !u!114 &11497928
 MonoBehaviour:

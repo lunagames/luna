@@ -14,8 +14,17 @@ public class FireballController : MonoBehaviour {
 	public float damage;
 	public float speed;
 	public GameObject fireballExplosion;
+	public AudioClip fireballLaunchClip;
+	public AudioClip explposionClip;
+
+	void Awake()
+	{
+		AudioSource.PlayClipAtPoint(fireballLaunchClip,transform.position);
+	}
+
 	// Use this for initialization
 	void Start () {
+
 		if(Time.timeScale == 1){
 			adjustedTime = Time.deltaTime;
 		}
@@ -61,6 +70,7 @@ public class FireballController : MonoBehaviour {
 		}
 
 		//create a fireball explosion and destroy the fireball on impact 
+		AudioSource.PlayClipAtPoint(explposionClip,transform.position);
 		GameObject explosion = Instantiate(fireballExplosion,transform.position,Quaternion.identity) as GameObject;
 		GameObject.Destroy(explosion,2.5f);
 		GameObject.Destroy(gameObject);
