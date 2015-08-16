@@ -9,6 +9,7 @@ namespace UnityStandardAssets._2D
     {
 		private LunaCharacterController m_Character;
         public bool m_Jump;
+		public bool m_Ability;
 		public float h;
 
 
@@ -29,6 +30,11 @@ namespace UnityStandardAssets._2D
                 // Read the jump input in Update so button presses aren't missed.
                 m_Jump = CrossPlatformInputManager.GetButtonDown("xbox button a");
 		     }
+			if (!m_Ability)
+			{
+				// Read the jump input in Update so button presses aren't missed.
+				m_Ability = CrossPlatformInputManager.GetButtonDown("xbox button b");
+			}
 			#endif
 
         }
@@ -47,6 +53,8 @@ namespace UnityStandardAssets._2D
 			m_Character.Move (h);
 			m_Character.Jump (m_Jump);
 			m_Jump = false;
+			m_Character.Ability (m_Ability);
+			m_Ability = false;
 			#else
 			m_Character.Move (h);
 			#endif				

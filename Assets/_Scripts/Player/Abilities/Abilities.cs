@@ -63,22 +63,26 @@ public class Abilities : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+
 		//Fireball shooting
-		if(fireball && abilityBar.AbilityEnabled && playerScript.CurHealth > 0)
-		{
+		//Moved the below IF Statement into Shootfireball Void so that the IF statements still run when the ShootFireball void is triggered from mobile interface - Wayne
+		//if(fireball && abilityBar.AbilityEnabled && playerScript.CurHealth > 0)
+		//{
 			if(Input.GetKeyDown(KeyCode.S))
 			{
 				ShootFireball();
 			}
-		}
+		//}
 	}
 
-	void ShootFireball()
+	public void ShootFireball()
 	{
-		Debug.Log ("Fireball Shot!");
-		Instantiate (fireball,fireballSpawn.transform.position,Quaternion.identity);
-		//decrement the abilitybar by 10% per shot
-		abilityBar.CurrentAbilityCharge -= abilityBar.MaxAbilityCharge * 0.10f;
+		if (fireball && abilityBar.AbilityEnabled && playerScript.CurHealth > 0) {
+			Debug.Log ("Fireball Shot!");
+			Instantiate (fireball, fireballSpawn.transform.position, Quaternion.identity);
+			//decrement the abilitybar by 10% per shot
+			abilityBar.CurrentAbilityCharge -= abilityBar.MaxAbilityCharge * 0.10f;
+		}
 		
 	}
 }
