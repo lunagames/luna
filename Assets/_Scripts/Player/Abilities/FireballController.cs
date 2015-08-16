@@ -50,6 +50,7 @@ public class FireballController : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col)
 	{
+		//deplete the health of objects tagged destructable or enemy
 		if(col.gameObject.tag == "Destructable" || col.gameObject.tag == "Enemy")
 		{
 			if(col.gameObject.GetComponent<EnemyDestructibleHealth>() != null)
@@ -57,15 +58,13 @@ public class FireballController : MonoBehaviour {
 				col.gameObject.GetComponent<EnemyDestructibleHealth>().health -= damage;
 			}
 
-			//GameObject.Destroy(col.gameObject);
 		}
-		if(col.gameObject != GameObject.FindGameObjectWithTag("Player") || col.gameObject.tag != "Fireball")
-		{
-			//create a fireball explosion and destroy the fireball on impact 
-			GameObject explosion = Instantiate(fireballExplosion,transform.position,Quaternion.identity) as GameObject;
-			GameObject.Destroy(explosion,2.5f);
-			GameObject.Destroy(gameObject);
-		}
+
+		//create a fireball explosion and destroy the fireball on impact 
+		GameObject explosion = Instantiate(fireballExplosion,transform.position,Quaternion.identity) as GameObject;
+		GameObject.Destroy(explosion,2.5f);
+		GameObject.Destroy(gameObject);
+
 
 	}
 
