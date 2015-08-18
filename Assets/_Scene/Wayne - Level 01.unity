@@ -1968,7 +1968,7 @@ Prefab:
       objectReference: {fileID: 1555321087}
     - target: {fileID: 141576, guid: 07134ac3ef7ecbc4da0a5e4a30ac0d6f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11479930, guid: 07134ac3ef7ecbc4da0a5e4a30ac0d6f, type: 2}
       propertyPath: m_Colors.m_PressedColor.r
@@ -2784,7 +2784,7 @@ Prefab:
       objectReference: {fileID: 1555321088}
     - target: {fileID: 152160, guid: 65f96f1ddce8ad7498e91e380815d80f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11405596, guid: 65f96f1ddce8ad7498e91e380815d80f, type: 2}
       propertyPath: m_Colors.m_PressedColor.r
@@ -4176,7 +4176,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 140248, guid: a584f5993f06995479c766687c915108, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11485526, guid: a584f5993f06995479c766687c915108, type: 2}
       propertyPath: m_Colors.m_PressedColor.r
@@ -5208,7 +5208,7 @@ Prefab:
       objectReference: {fileID: 1555321088}
     - target: {fileID: 144130, guid: 85579d8d293ebbd43a00bb3fed986c38, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11465482, guid: 85579d8d293ebbd43a00bb3fed986c38, type: 2}
       propertyPath: m_Colors.m_PressedColor.r
