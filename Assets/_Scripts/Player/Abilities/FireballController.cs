@@ -60,7 +60,7 @@ public class FireballController : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col)
 	{
 		//deplete the health of objects tagged destructable or enemy
-		if(col.gameObject.tag == "Destructable" || col.gameObject.tag == "Enemy")
+		if(col.gameObject.tag == "Destructible" || col.gameObject.tag == "Enemy")
 		{
 			if(col.gameObject.GetComponent<EnemyDestructibleHealth>() != null)
 			{
