@@ -12,7 +12,6 @@ TagManager:
   - Neutralized
   - Destructible
   - Fireball
-  - Destructable
   layers:
   - Default
   - TransparentFX
