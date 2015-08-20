@@ -10,6 +10,7 @@ public class Abilities : MonoBehaviour {
 	public AbilityBar abilityBar;
 	public string activePower;
 	public float T_abilityCost = 10;
+	public GameObject abilityPickerUI;
 	
 	private bool powerActivated = false;
 	private bool waveSpawned = false;
@@ -34,23 +35,11 @@ public class Abilities : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKey(KeyCode.F)){
-			if(activePower == "TimeSlow"){
-				if(abilityBar.CurrentAbilityCharge>0){
-					Time.timeScale = timeSlowSpeed;
-					abilityBar.abilityCost = T_abilityCost;
-					powerActivated = true;
-				}
-			}
+		if(activePower == "TimeSlow")
+		{
+			TimeSlow();
+		}
 
-		}
-		if(Input.GetKeyUp(KeyCode.F)||activePower == null||!powerActivated||abilityBar.CurrentAbilityCharge<=0){
-			if(powerActivated){
-				Time.timeScale = 1;
-				abilityBar.abilityCost = 0;
-				powerActivated = false;
-			}
-		}
 		if(Input.GetKeyDown(KeyCode.F)){
 			if(activePower == "ForcePush"&&abilityBar.CurrentAbilityCharge>=abilityBar.MaxAbilityCharge/10){
 				forceWave = Instantiate(pushForce,transform.position,Quaternion.identity) as GameObject;
@@ -77,7 +66,7 @@ public class Abilities : MonoBehaviour {
 
 	public void ShootFireball()
 	{
-		if (fireball && abilityBar.AbilityEnabled && playerScript.CurHealth > 0) {
+		if (fireball && abilityBar.AbilityEnabled && playerScript.CurHealth > 0 && activePower == "Fireball") {
 			Debug.Log ("Fireball Shot!");
 			Instantiate (fireball, fireballSpawn.transform.position, Quaternion.identity);
 			//decrement the abilitybar by 10% per shot
@@ -85,4 +74,40 @@ public class Abilities : MonoBehaviour {
 		}
 		
 	}
+
+	public void TimeSlow()
+	{
+		if(Input.GetKey(KeyCode.F)){
+			{
+				if(abilityBar.CurrentAbilityCharge>0)
+				{
+					Time.timeScale = timeSlowSpeed;
+					abilityBar.abilityCost = T_abilityCost;
+					powerActivated = true;
+				}
+			}
+			
+		}
+		if(Input.GetKeyUp(KeyCode.F)||activePower == null||!powerActivated||abilityBar.CurrentAbilityCharge<=0)
+		{
+			if(powerActivated){
+				Time.timeScale = 1;
+				abilityBar.abilityCost = 0;
+				powerActivated = false;
+			}
+		}
+	}
+
+	//Used for the buttons to pick which power to charge
+	public void SetActivePower(string ability)
+	{
+		activePower = ability;
+		Debug.Log ("Selected ability: " + activePower);
+		abilityPickerUI.SetActive(false);
+		Time.timeScale = 1;
+		abilityBar.FillAbilityBar();
+
+	}
+
+
 }
