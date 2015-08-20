@@ -27,6 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 479506}
   - 60: {fileID: 6002664}
+  - 114: {fileID: 11427694}
   m_Layer: 0
   m_Name: LevelGem
   m_TagString: Untagged
@@ -81,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 146.660004, y: 16.3689995, z: 0}
+  m_LocalPosition: {x: -.541000009, y: 10.6700001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 479180}
@@ -127,7 +128,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 170188}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
@@ -181,6 +182,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+--- !u!114 &11427694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b76a9032525cb5468e6a97484c6bcad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoinCollectNoise: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
