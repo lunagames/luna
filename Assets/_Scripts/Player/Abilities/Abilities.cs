@@ -14,6 +14,7 @@ public class Abilities : MonoBehaviour {
 	
 	private bool powerActivated = false;
 	private bool waveSpawned = false;
+
 	//Fireball 
 	private LunaCharacterController lunaCharacterController;
 	private PlayerScript playerScript;
@@ -101,11 +102,15 @@ public class Abilities : MonoBehaviour {
 	//Used for the buttons to pick which power to charge
 	public void SetActivePower(string ability)
 	{
-		activePower = ability;
-		Debug.Log ("Selected ability: " + activePower);
+		if(ability != "None") // if an ability is chosen instead of pushing the x button
+		{
+			activePower = ability;
+			Debug.Log ("Selected ability: " + activePower);
+			abilityBar.FillAbilityBar();
+		}
 		abilityPickerUI.SetActive(false);
 		Time.timeScale = 1;
-		abilityBar.FillAbilityBar();
+
 
 	}
 
