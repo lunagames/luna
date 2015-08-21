@@ -67,9 +67,12 @@ public class Abilities : MonoBehaviour {
 
 	public void ShootFireball()
 	{
-		if (fireball && abilityBar.AbilityEnabled && playerScript.CurHealth > 0 && activePower == "Fireball") {
-			Debug.Log ("Fireball Shot!");
-			Instantiate (fireball, fireballSpawn.transform.position, Quaternion.identity);
+		if (fireball && abilityBar.AbilityEnabled && playerScript.CurHealth > 0 && activePower == "Fireball") 
+		{
+			GameObject fireballInstance = Instantiate (fireball, 
+			                                           fireballSpawn.transform.position, 
+			                                           Quaternion.identity) as GameObject;
+			GameObject.Destroy(fireballInstance,4f);
 			//decrement the abilitybar by 10% per shot
 			abilityBar.CurrentAbilityCharge -= abilityBar.MaxAbilityCharge * 0.10f;
 		}
