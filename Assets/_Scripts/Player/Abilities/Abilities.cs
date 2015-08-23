@@ -17,7 +17,7 @@ public class Abilities : MonoBehaviour {
 
 	//Fireball 
 	private LunaCharacterController lunaCharacterController;
-	private PlayerScript playerScript;
+	private DeathScript DeathScript;
 	private GameObject fireballSpawn;
 	private GameObject forceWave;
 
@@ -25,7 +25,7 @@ public class Abilities : MonoBehaviour {
 		lunaCharacterController = FindObjectOfType<LunaCharacterController>();
 		player = this.gameObject;
 		abilityBar = GetComponent<AbilityBar>();
-		playerScript = GetComponent<PlayerScript>();
+		DeathScript = GetComponent<DeathScript>();
 		fireballSpawn = GameObject.Find("FireballSpawn");
 
 	}
@@ -67,7 +67,7 @@ public class Abilities : MonoBehaviour {
 
 	public void ShootFireball()
 	{
-		if (fireball && abilityBar.AbilityEnabled && playerScript.CurHealth > 0 && activePower == "Fireball") 
+		if (fireball && abilityBar.AbilityEnabled && activePower == "Fireball") 
 		{
 			GameObject fireballInstance = Instantiate (fireball, 
 			                                           fireballSpawn.transform.position, 
