@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class ObjectPool : MonoBehaviour
 {
-	
 	public static ObjectPool instance;
 	
 	/// <summary>
@@ -36,7 +35,6 @@ public class ObjectPool : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		
 		//Loop through the object prefabs and make a new list for each one.
 		//We do this because the pool can only support prefabs set to it in the editor,
 		//so we can assume the lists of pooled objects are in the same order as object prefabs in the array
@@ -48,10 +46,16 @@ public class ObjectPool : MonoBehaviour
 			pooledObjects[i] = new List<GameObject>(); 
 			int bufferAmount;
 			
-			if(i < amountToBuffer.Length) bufferAmount = amountToBuffer[i];
+			if(i < amountToBuffer.Length)
+			{
+				bufferAmount = amountToBuffer[i];
+			}
+				
 			else
+			{
 				bufferAmount = defaultBufferAmount;
-			
+			}
+				
 			for ( int n=0; n<bufferAmount; n++)
 			{
 				GameObject newObj = Instantiate(objectPrefab) as GameObject;
@@ -87,8 +91,8 @@ public class ObjectPool : MonoBehaviour
 					{
 						return pooledObject;
 					}
-
-				 }
+				}
+				
 				if(willGrow)
 				{
 					GameObject obj = Instantiate(prefab) as GameObject;
@@ -96,11 +100,8 @@ public class ObjectPool : MonoBehaviour
 					PoolObject(obj);
 					return(obj);
 				}
-
-			  }
-
-
-		   }
+			}
+		}
 		//If we have gotten here either there was no object of the specified type
 		return null;
 	}
