@@ -30,6 +30,7 @@ GameObject:
   - 114: {fileID: 11480864}
   - 50: {fileID: 5024382}
   - 58: {fileID: 5812326}
+  - 114: {fileID: 11496608}
   m_Layer: 13
   m_Name: Fireball
   m_TagString: Fireball
@@ -106,7 +107,18 @@ MonoBehaviour:
   speed: 500
   fireballExplosion: {fileID: 151796, guid: 683ebd90232ca9648aa36e10e200881c, type: 2}
   fireballLaunchClip: {fileID: 8300000, guid: 4f5e76fb3b4cb8d4da49fd3f97490b08, type: 3}
-  explposionClip: {fileID: 8300000, guid: 135836686d668f3408dc53f10d36226f, type: 3}
+  explosionClip: {fileID: 8300000, guid: 135836686d668f3408dc53f10d36226f, type: 3}
+--- !u!114 &11496608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158484e02a0b88d48adc9a41e281f08c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &19817004
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -2350,6 +2362,10 @@ Prefab:
       propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: explosionClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 135836686d668f3408dc53f10d36226f, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 185732}

@@ -4,7 +4,6 @@ using UnityStandardAssets._2D;
 
 public class Abilities : MonoBehaviour {
 	public GameObject player;
-	public GameObject fireball;
 	public GameObject pushForce;
 	public float timeSlowSpeed = 0.5f;
 	public AbilityBar abilityBar;
@@ -14,8 +13,6 @@ public class Abilities : MonoBehaviour {
 	
 	private bool powerActivated = false;
 	private bool waveSpawned = false;
-
-	//Fireball 
 	private LunaCharacterController lunaCharacterController;
 	private DeathScript DeathScript;
 	private GameObject fireballSpawn;
@@ -48,35 +45,25 @@ public class Abilities : MonoBehaviour {
 				abilityBar.CurrentAbilityCharge -= abilityBar.MaxAbilityCharge * 0.10f;
 			}
 		}
-
-	}
-
-	void FixedUpdate()
-	{
-
-		//Fireball shooting
-		//Moved the below IF Statement into Shootfireball Void so that the IF statements still run when the ShootFireball void is triggered from mobile interface - Wayne
-		//if(fireball && abilityBar.AbilityEnabled && playerScript.CurHealth > 0)
-		//{
-			if(Input.GetKeyDown(KeyCode.S))
-			{
-				ShootFireball();
-			}
-		//}
 	}
 
 	public void ShootFireball()
 	{
-		if (fireball && abilityBar.AbilityEnabled && activePower == "Fireball") 
+		if (abilityBar.AbilityEnabled && activePower == "Fireball") 
 		{
-			GameObject fireballInstance = Instantiate (fireball, 
-			                                           fireballSpawn.transform.position, 
-			                                           Quaternion.identity) as GameObject;
-			GameObject.Destroy(fireballInstance,4f);
-			//decrement the abilitybar by 10% per shot
+//			//grab a fireball from the fireball pool
+			GameObject fireball = ObjectPool.instance.GetObjectForType("Fireball");
+			if(fireball == null) return;
+//
+//			//set the fireballs position and activate it
+			fireball.transform.position = fireballSpawn.transform.position;
+			fireball.transform.rotation = Quaternion.identity;
+			fireball.SetActive(true);
+//
+//			//decrement the abilitybar by 10% per shot
 			abilityBar.CurrentAbilityCharge -= abilityBar.MaxAbilityCharge * 0.10f;
 		}
-		
+//		
 	}
 
 	public void TimeSlow()
@@ -92,6 +79,7 @@ public class Abilities : MonoBehaviour {
 			}
 			
 		}
+
 		if(Input.GetKeyUp(KeyCode.F)||activePower == null||!powerActivated||abilityBar.CurrentAbilityCharge<=0)
 		{
 			if(powerActivated){
@@ -113,7 +101,6 @@ public class Abilities : MonoBehaviour {
 		}
 		abilityPickerUI.SetActive(false);
 		Time.timeScale = 1;
-
 
 	}
 
