@@ -2,11 +2,6 @@
 using System.Collections;
 using UnityStandardAssets._2D;
 	
-	/// <summary>
-	/// Fireball controller. After 1 shot, the fireballs no longer move when activated. 
-    /// still spawns at fireball spawn position. no movement and no sound.???
-	/// </summary>
-	
 public class FireballController : MonoBehaviour {
 	
 	private LunaCharacterController lunaCharacterController;
@@ -44,6 +39,7 @@ public class FireballController : MonoBehaviour {
 		else if(Time.timeScale != 1){
 			adjustedTime = Time.deltaTime / Time.timeScale;
 		}
+
 		//if the character is facing to the right, shoot to the right
 		if(lunaCharacterController.m_FacingRight)
 		{
@@ -52,6 +48,7 @@ public class FireballController : MonoBehaviour {
 			newRotation = Quaternion.Euler(0,0,0);
 			transform.rotation = newRotation;
 		}
+
 		//if the character is facing left, shoot to the left
 		else if (!lunaCharacterController.m_FacingRight)
 		{
@@ -59,7 +56,6 @@ public class FireballController : MonoBehaviour {
 			newRotation = Quaternion.Euler(0,180,0);
 			transform.rotation = newRotation;
 		}
-
 	}
 
 	void OnCollisionEnter2D(Collision2D col)
@@ -71,25 +67,18 @@ public class FireballController : MonoBehaviour {
 			{
 				col.gameObject.GetComponent<EnemyDestructibleHealth>().health -= damage;
 			}
-
 		}
 
 		//create a fireball explosion and deactivate the fireball on impact 
 		AudioSource.PlayClipAtPoint(explosionClip,transform.position);
 		gameObject.SetActive(false);
+
 		GameObject explosion = ObjectPool.instance.GetObjectForType("Explosion");
 		if(explosion == null) return;
-		//
-		//			//set the fireballs position and activate it
+
+		//set the fireballs position and activate it
 		explosion.transform.position = transform.position;
 		explosion.transform.rotation = Quaternion.identity;
 		explosion.SetActive(true);
-		//GameObject explosion = Instantiate(fireballExplosion,transform.position,Quaternion.identity) as GameObject;
-		//GameObject.Destroy(explosion,2.5f);
-
-
 	}
-
-
-
 }
