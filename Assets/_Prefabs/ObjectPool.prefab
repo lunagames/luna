@@ -39,10 +39,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb566009404dd6e4e8bc2d946bffaba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefabs: []
-  amountToBuffer: 
+  objectPrefabs:
+  - {fileID: 185732, guid: 3c3e722068adafc43a739e64f4935768, type: 2}
+  - {fileID: 151796, guid: 683ebd90232ca9648aa36e10e200881c, type: 2}
+  amountToBuffer: 0a0000000a000000
   defaultBufferAmount: 3
-  willGrow: 0
+  willGrow: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
