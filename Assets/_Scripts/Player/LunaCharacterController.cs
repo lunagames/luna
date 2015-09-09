@@ -138,7 +138,8 @@ namespace UnityStandardAssets._2D
 		{
 			if(m_jumped && jump && !m_doubleJumped){
 				m_doubleJumped = true;
-				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce - (m_Anim.GetFloat("vSpeed")*10)));
+				m_Rigidbody2D.velocity = new Vector3(m_Rigidbody2D.velocity.x,0);
+				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 				m_Anim.SetBool("DoubleJumped", true);
 				AudioSource audio = GetComponent<AudioSource>();
 				audio.Play();
