@@ -53,7 +53,6 @@ namespace UnityStandardAssets._2D
 			m_Character.Move (h);
 			m_Character.Jump (m_Jump);
 			m_Jump = false;
-			m_Character.Ability (m_Ability);
 			m_Ability = false;
 			#else
 			m_Character.Move (h);

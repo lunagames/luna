@@ -10,7 +10,6 @@ public class AbilityChargePoint : MonoBehaviour {
 	void Awake()
 	{
 		Player = GameObject.FindGameObjectWithTag ("Player");
-
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -19,7 +18,7 @@ public class AbilityChargePoint : MonoBehaviour {
 
 
 			//activate the ability picker UI and freeze time
-			Time.timeScale = 0;
+			//Time.timeScale = 0;
 			AbilityBar abilityBar = Player.GetComponent<AbilityBar>();
 			abilityBar.EmptyAbilityBar();
 			abilityPickerUI.SetActive(true);

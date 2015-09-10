@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityStandardAssets._2D;
 
+
 public class Abilities : MonoBehaviour {
 	public GameObject player;
 	public GameObject pushForce;
@@ -33,7 +34,7 @@ public class Abilities : MonoBehaviour {
 		{
 			TimeSlow();
 		}
-
+        
 		if(Input.GetKeyDown(KeyCode.F))
 		{
 			if(activePower == "ForcePush"&&abilityBar.CurrentAbilityCharge>=abilityBar.MaxAbilityCharge/10)

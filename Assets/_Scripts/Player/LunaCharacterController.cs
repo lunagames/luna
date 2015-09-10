@@ -157,22 +157,5 @@ namespace UnityStandardAssets._2D
 			}
 
 		}
-
-		public void Ability(bool ability)
-		{
-			// If the player should use ability...
-			if (ability)
-			{
-
-				Abilities pstats = GetComponent<Abilities> ();
-				// This shoots a fireball.  We need to change 
-				pstats.ShootFireball ();
-				Debug.Log ("Ability button pressed");
-				
-			}
-			
-		}
-
-
     }
 }
