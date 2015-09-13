@@ -4212,6 +4212,7 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 1024
+  m_AirMobilityFactor: .850000024
   m_FacingRight: 1
 --- !u!114 &1555321088
 MonoBehaviour:
@@ -5428,6 +5429,10 @@ Prefab:
     - target: {fileID: 420056, guid: 701657c76439e134e8232f52c8276d4b, type: 2}
       propertyPath: m_RootOrder
       value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439448, guid: 701657c76439e134e8232f52c8276d4b, type: 2}
+      propertyPath: health
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 701657c76439e134e8232f52c8276d4b, type: 2}

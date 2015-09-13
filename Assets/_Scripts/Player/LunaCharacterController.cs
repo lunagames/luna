@@ -15,6 +15,8 @@ namespace UnityStandardAssets._2D
 		[SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
         [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 
+		[SerializeField] private float m_AirMobilityFactor = 0.8f;          // Mobility loss while in air
+
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
         const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
         private bool m_Grounded;            // Whether or not the player is grounded.
@@ -99,10 +101,16 @@ namespace UnityStandardAssets._2D
 
                 // Move the character
 
-
-				m_Rigidbody2D.velocity = new Vector2((move*m_MaxSpeed)/Time.timeScale, m_Rigidbody2D.velocity.y);
-
-
+				if (m_Grounded)
+				{
+					//Without Air Mobility Factor
+					m_Rigidbody2D.velocity = new Vector2((move*m_MaxSpeed)/Time.timeScale, m_Rigidbody2D.velocity.y);
+				}
+				else
+				{
+					//With Air Mobility Factor to reduce player control/speed in air
+					m_Rigidbody2D.velocity = new Vector2((move*m_MaxSpeed*m_AirMobilityFactor)/Time.timeScale, m_Rigidbody2D.velocity.y);
+				}
 
                 // If the input is moving the player right and the player is facing left...
                 if (move > 0 && !m_FacingRight)
