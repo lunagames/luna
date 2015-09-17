@@ -4962,6 +4962,7 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 1024
+  m_AirMobilityFactor: .800000012
   m_FacingRight: 1
 --- !u!114 &1718802293
 MonoBehaviour:
