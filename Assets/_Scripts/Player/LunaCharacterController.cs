@@ -27,6 +27,7 @@ namespace UnityStandardAssets._2D
         public bool m_FacingRight = true;  // For determining which way the player is currently facing.
 		private bool m_doubleJumped = false;
 		private bool m_jumped = false;
+		public float JetPackSpeed = 5f;
 
 
         private void Awake()
@@ -182,6 +183,11 @@ namespace UnityStandardAssets._2D
 			
 		}
 
+		public void PlayerFlight()
+		{
+			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, JetPackSpeed);
+
+		}
 
     }
 }

@@ -999,6 +999,7 @@ MonoBehaviour:
     m_Bits: 1024
   m_AirMobilityFactor: .850000024
   m_FacingRight: 1
+  JetPackSpeed: 6.5
 --- !u!114 &11411762
 MonoBehaviour:
   m_ObjectHideFlags: 1

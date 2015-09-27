@@ -43,6 +43,13 @@ public class Abilities : MonoBehaviour {
 				abilityBar.CurrentAbilityCharge -= abilityBar.MaxAbilityCharge * 0.10f;
 			}
 		}
+
+		//Player Flight
+		//If function and Keycode is temp only
+		if (Input.GetKey (KeyCode.J)) {
+			Debug.Log ("J Pressed");
+			lunaCharacterController.PlayerFlight ();
+		}
 	}
 
 	public void ShootFireball()
@@ -100,4 +107,7 @@ public class Abilities : MonoBehaviour {
 		abilityPickerUI.SetActive(false);
 		Time.timeScale = 1;
 	}
+
+
 }
+
